@@ -166,7 +166,7 @@ class TutorialOverlay {
   }) : assert(
          dismissible || showButtons,
          'showButtons must be true or set dismissible to true\n'
-         'If showButtons and dismissible is set ti false the user will not be able exit the tutorial overlay',
+         'If showButtons and dismissible is set to false the user will not be able to exit the tutorial overlay',
        ) {
     if (blurOpacity < 0) blurOpacity = 20;
   }
@@ -189,7 +189,7 @@ class TutorialOverlay {
     assert(currentContext != null, '''
 TutorialOverlay Error: Could not find target widget for step $_currentStep.
 
-This happens because you're trying to highlight a widget that is not yet build like the widgets Flutter
+This happens because you're trying to highlight a widget that is not yet built like the widgets Flutter
 creates automatically (example: the AppBar drawer button). That widget does
 not exist in your widget tree, so it cannot have a GlobalKey.
 

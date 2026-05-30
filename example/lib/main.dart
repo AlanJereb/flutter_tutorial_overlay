@@ -78,7 +78,7 @@ class TutorialExampleState extends State<TutorialExample> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Tutorial Overlay v1.0.1',
+              'Tutorial Overlay v1.0.5',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
             SizedBox(height: 10),
@@ -151,6 +151,13 @@ class TutorialExampleState extends State<TutorialExample> {
               child: ElevatedButton(
                 onPressed: _startLegacyTutorial,
                 child: Text('Legacy (Deprecated)'),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12.0),
+              child: ElevatedButton(
+                onPressed: _startDismissTutorial,
+                child: Text('Dismiss from Code'),
               ),
             ),
           ],
@@ -238,7 +245,7 @@ class TutorialExampleState extends State<TutorialExample> {
     final steps = [
       TutorialStep(
         targetKey: _fabKey,
-        title: 'New in v1.0.1',
+        title: 'New in v1.0.5',
         description:
             'This tutorial demonstrates the new step-specific callbacks and tagging features!',
         tag: 'new_features_demo',
@@ -340,6 +347,34 @@ class TutorialExampleState extends State<TutorialExample> {
     );
 
     tutorial.show();
+  }
+
+  void _startDismissTutorial() {
+    final steps = [
+      TutorialStep(
+        targetKey: _fabKey,
+        title: 'Programmatic Dismissal',
+        description: 'This tutorial will automatically close after 3 seconds.',
+        tag: 'dismiss_demo',
+      ),
+    ];
+
+    final tutorial = TutorialOverlay(
+      context: context,
+      steps: steps,
+      showButtons: false,
+      dismissible: true,
+    );
+
+    tutorial.show();
+
+    // Automatically dismiss after 3 seconds
+    Future.delayed(Duration(seconds: 3), () {
+      tutorial.dismiss();
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Tutorial dismissed programmatically!')),
+      );
+    });
   }
 
   void _trackStepCompletion(String stepTag) {

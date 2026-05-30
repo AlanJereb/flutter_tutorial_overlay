@@ -211,7 +211,7 @@ TutorialOverlay(
   finishText: "Done",
 
   // Behavior
-  dismissable: true,
+  dismissible: true,
   showButtons: true,
 
   // Global callbacks
@@ -263,7 +263,7 @@ TutorialOverlay(
   context: context,
   steps: steps,
   showButtons: false,
-  dismissable: true, // Allow tap anywhere to continue
+  dismissible: true, // Allow tap anywhere to continue
 );
 ```
 
@@ -292,12 +292,12 @@ TutorialOverlay(
 | descriptionTextColor   | Color?             | null               | Color of description text              |
 | highlightRadius        | double             | 12.0               | Border radius of highlight             |
 | highlightBorderColor   | Color              | Colors.transparent | Border color of highlight              |
-| highlightBorderWidth   | double             | 0.0                | Border width of highlight              |
+| highlightBorderWidth   | double             | 2.0                | Border width of highlight              |
 | targetPadding          | double             | 0.0                | Padding around target widget           |
 | blurSigma              | double             | 6.0                | Blur intensity of overlay              |
-| blurOpacity            | double             | 20                 | Opacity of overlay blur                |
+| blurOpacity            | int                | 20                 | Opacity of overlay blur                |
 | overlayTint            | Color              | Color(0x8A000000)  | Tint color of the overlay              |
-| dismissable            | bool               | false              | Allow tap to dismiss                   |
+| dismissible            | bool               | false              | Allow tap to dismiss                   |
 | showButtons            | bool               | true               | Show navigation buttons                |
 | nextButtonStyle        | ButtonStyle?       | null               | Style for the "Next" button            |
 | skipButtonStyle        | ButtonStyle?       | null               | Style for the "Skip" button            |
