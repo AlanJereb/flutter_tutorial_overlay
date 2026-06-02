@@ -3,11 +3,14 @@
 ### Added
 
 - `dismiss()` method to `TutorialOverlay` for programmatic control of the overlay visibility.
+- `titleStyle` and `descriptionStyle` to `TutorialOverlay` for custom title and descriptions styling.
 
 ### Fixed
 
 - `tooltipBorderRadius` property is now correctly applied to the tooltip container.
-- Typo in `TutorialOverlay` error message and assertions.
+- `tooltipMaxWidth` property now correctly sizes tooltips that span across the whole width of the screen.
+- `overlayTint` property is now correctly applied to the BackdropFilter. 
+- Typo in `TutorialOverlay` error message, assertions and finishText.
 - General spelling and documentation improvements across the package.
 
 
