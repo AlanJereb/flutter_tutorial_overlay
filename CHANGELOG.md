@@ -1,4 +1,15 @@
-## latest
+## [1.0.5] - 2026-05-30
+
+### Added
+
+- `dismiss()` method to `TutorialOverlay` for programmatic control of the overlay visibility.
+
+### Fixed
+
+- `tooltipBorderRadius` property is now correctly applied to the tooltip container.
+- Typo in `TutorialOverlay` error message and assertions.
+- General spelling and documentation improvements across the package.
+
 
 ## [1.0.4] - 2025-09-10
 
@@ -13,7 +24,7 @@
 - Added showcase section in README file
 - Updated README file to enhance SEO of the package
 - Enabled the android project in the example
-- odified the example code to work perfectly on android devices
+- Modified the example code to work perfectly on android devices
 
 ## [1.0.1] - 2025-09-08
 
